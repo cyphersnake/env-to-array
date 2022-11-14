@@ -1,7 +1,9 @@
 [package]
 name = "env_to_array"
-version = "0.1.0"
+version = "0.0.0"
 edition = "2021"
+description = "Auxiliary crate for collecting arrays in different encodings from environment variables"
+license = "MIT"
 
 [lib]
 proc-macro = true
