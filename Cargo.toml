@@ -1,8 +1,8 @@
 [package]
 name = "env_to_array"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
-author = ["cyphersnake <cyphersnake@pm.me>"]
+authors = ["cyphersnake <cyphersnake@pm.me>"]
 repository = "https://github.com/cyphersnake/env_to_array"
 description = "Auxiliary crate for collecting arrays in different encodings from string constant & environment variables"
 license = "MIT"
@@ -23,5 +23,4 @@ hex = { version = "0.4.3", optional = true }
 
 itertools = "0.10.5"
 proc-macro2 = "1.0.47"
-solana-sdk = "1.14.7"
 syn = { version = "1.0.103", features = ["full"] }
