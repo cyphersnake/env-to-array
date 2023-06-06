@@ -1,6 +1,6 @@
 [package]
 name = "env_to_array"
-version = "0.1.1"
+version = "0.1.2"
 edition = "2021"
 authors = ["cyphersnake <cyphersnake@pm.me>"]
 repository = "https://github.com/cyphersnake/env_to_array"
