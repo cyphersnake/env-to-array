@@ -47,3 +47,15 @@ const HEX_ENV_ID: [u64; 64] = env_to_array::hex_env_to_array!("_ENV_TO_ARRAY_HEX
 /// Get array from constant encoded by hex
 const HEX_ID: [u64; 64] = env_to_array::hex_to_array!("5bb32685b7e5bb32685b7ea2d07382db3744d43df89f97148eeae559ec4d0d1feefa2ee789da2d07382db3744d43df89f97148eeae559ec4d0d1feefa2ee789d");
 ```
+
+### base32
+
+The `bs32` feature should be enabled (enabled by default)
+
+```rust
+/// Get array from env variable encoded by base58
+const BS32_ENV_ID: [u8; 5] = env_to_array::bs32_env_to_array!("_ENV_TO_ARRAY_BS32");
+
+/// Get array from constant encoded by base58
+const BS32_ID: [u8; 5] = env_to_array::bs32_to_array!("Z0Z0Z0Z0");
+```
