@@ -1,3 +1,5 @@
+#![doc = include_str!("../README.md")]
+
 use itertools::Itertools;
 use proc_macro::TokenStream;
 use syn::parse_macro_input;
@@ -12,7 +14,7 @@ fn slice_to_array_token(input: &[u8]) -> TokenStream {
 #[cfg(feature = "bs58")]
 /// Get from variable string, decode it from bs58 and write array as result
 /// ```
-/// const ID: [u8; 32] = env_to_array::bs58_to_array!("7AxYSahRegVSuU76JGWNxzdwVAPpaonY26V6JH17ToUQ");
+/// const ID: [u8; 65] = env_to_array::bs58_to_array!("7Ax7AxYSahRegVSuU76JGWNxzdwVAPpaonY26V6JH17ToUQYSahRegVSuU76JGWNxzdwVAPpaonY26V6JH17ToUQ");
 /// ```
 #[proc_macro]
 pub fn bs58_to_array(input: TokenStream) -> TokenStream {
@@ -27,7 +29,7 @@ pub fn bs58_to_array(input: TokenStream) -> TokenStream {
 #[cfg(feature = "bs64")]
 /// Get from variable string, decode it from bs64 and write array as result
 /// ```
-/// const ID: [u8; 32] = env_to_array::bs64_to_array!("W7MmhbfqLQc4LbN0TUPfiflxSO6uVZ7E0NH+76LueJ0=");
+/// const ID: [u8; 29] = env_to_array::bs64_to_array!("W7MmhbfqLQc4LbN0TUPfiflxSO6uVZ7E0NHueJ0=");
 /// ```
 #[proc_macro]
 pub fn bs64_to_array(input: TokenStream) -> TokenStream {
@@ -41,7 +43,7 @@ pub fn bs64_to_array(input: TokenStream) -> TokenStream {
 #[cfg(feature = "hex")]
 /// Get value from variable string, decode it from hex and write array as result
 /// ```
-/// const ID: [u8; 32] = env_to_array::hex_to_array!("5bb32685b7ea2d07382db3744d43df89f97148eeae559ec4d0d1feefa2ee789d");
+/// const ID: [u8; 31] = env_to_array::hex_to_array!("5bb32685b7ea2d07382db3744d43df89f97148eeae559ec4d0d1feefa2ee78");
 /// ```
 #[proc_macro]
 pub fn hex_to_array(input: TokenStream) -> TokenStream {
@@ -55,7 +57,7 @@ pub fn hex_to_array(input: TokenStream) -> TokenStream {
 #[cfg(feature = "bs58")]
 /// Get from env variable string, decode it from bs58 and write array as result
 /// ```
-/// const ID: [u8; 32] = env_to_array::bs58_env_to_array!("_ENV_TO_ARRAY_BS58");
+/// const ID: [u8; 17] = env_to_array::bs58_env_to_array!("_ENV_TO_ARRAY_BS58");
 /// ```
 #[proc_macro]
 pub fn bs58_env_to_array(input: TokenStream) -> TokenStream {
@@ -89,7 +91,7 @@ pub fn bs64_env_to_array(input: TokenStream) -> TokenStream {
 #[cfg(feature = "hex")]
 /// Get from env variable string, decode it from hex and write array as result
 /// ```
-/// const ID: [u8; 32] = env_to_array::hex_env_to_array!("_ENV_TO_ARRAY_HEX");
+/// const ID: [u8; 64] = env_to_array::hex_env_to_array!("_ENV_TO_ARRAY_HEX");
 /// ```
 #[proc_macro]
 pub fn hex_env_to_array(input: TokenStream) -> TokenStream {
