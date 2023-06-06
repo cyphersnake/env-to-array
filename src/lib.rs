@@ -138,3 +138,33 @@ pub fn bs32_env_to_array(input: TokenStream) -> TokenStream {
         .as_slice(),
     )
 }
+
+#[cfg(feature = "bs85")]
+/// Get from variable string, decode it from bs58 and write array as result
+/// ```
+/// const ID: [u8; 7] = env_to_array::bs85_to_array!("VPRomVPRn");
+/// ```
+#[proc_macro]
+pub fn bs85_to_array(input: TokenStream) -> TokenStream {
+    slice_to_array_token(
+        base85::decode(&parse_macro_input!(input as syn::LitStr).value())
+            .expect("Can't decode bs85")
+            .as_slice(),
+    )
+}
+
+#[cfg(feature = "bs85")]
+/// Get from env variable string, decode it from bs58 and write array as result
+/// ```
+/// const ID: [u8; 7] = env_to_array::bs85_env_to_array!("_ENV_TO_ARRAY_BS85");
+/// ```
+#[proc_macro]
+pub fn bs85_env_to_array(input: TokenStream) -> TokenStream {
+    slice_to_array_token(
+        base85::decode(
+            &std::env::var(parse_macro_input!(input as syn::LitStr).value()).expect("Env variable"),
+        )
+        .expect("Can't decode bs85")
+        .as_slice(),
+    )
+}

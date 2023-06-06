@@ -59,3 +59,15 @@ const BS32_ENV_ID: [u8; 5] = env_to_array::bs32_env_to_array!("_ENV_TO_ARRAY_BS3
 /// Get array from constant encoded by base58
 const BS32_ID: [u8; 5] = env_to_array::bs32_to_array!("Z0Z0Z0Z0");
 ```
+
+### base85
+
+The `bs85` feature should be enabled (enabled by default)
+
+```rust
+/// Get array from env variable encoded by base58
+const BS85_ENV_ID: [u8; 5] = env_to_array::bs32_env_to_array!("_ENV_TO_ARRAY_BS85");
+
+/// Get array from constant encoded by base58
+const BS85_ID: [u8; 5] = env_to_array::bs32_to_array!("VPRomVPRn");
+```
